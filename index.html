@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj JS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Media/Icono.png" type="image/x-icon">
+    <!-- <link href="https://allfont.net/allfont.css?fonts=star-jedi" rel="stylesheet" type="text/css" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,300;1,700&family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body >
+    <div class="estrellas">
+        <div class="Reloj">
+            <p class="Fecha"></p>
+            <p class="Tiempo"> </p>
+
+             <!-- MODAL -->
+
+    <div class="btn-group">
+        <button type="button" class="open-modal" data-open="modal1">
+           Cronómetro
+        </button>
+      </div>
+      
+      <div class="modal" id="modal1" data-animation="slideInOutLeft">
+        <div class="modal-dialog">
+          <header class="modal-header">
+            <strong>Cronómetro</strong> 
+            <button class="close-modal" aria-label="close modal" data-close>
+            X
+            </button>
+          </header>
+          <section class="modal-content">
+            <p id="Importante"><strong>Presiona "▶" para iniciar ,"||" para pausar y "❎" para parar</strong></p>
+            <main>
+                <div class="circle">
+                    <div id="stopwatch" class="stopwatch">00:00</div>
+                    <div class="buttons">
+                        <div class="stop" onclick="stop()"></div>
+                        <div id="play-pause" class="paused" onclick="playPause()"></div>
+                    </div>
+                </div>
+                <div id="seconds-sphere" class="seconds-sphere"></div>
+            </main>
+          </section>
+          <footer class="modal-footer">
+            Presiona "❎" o "ESC" para cerrar
+          </footer>
+        </div>
+      </div>
+      </div>    
+        </div>
+
+    </div>
+   
+    <script src="script.js"></script>
+    
+</body>
+</html>

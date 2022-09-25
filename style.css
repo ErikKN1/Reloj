@@ -1,0 +1,376 @@
+:root {
+    --lightgray: #efefef;
+    --blue: steelblue;
+    /* --white: rgb(61, 57, 57); */
+    --black: rgba(0, 0, 0, 0.8);
+    --bounceEasing: cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  }
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* CSS Modal*/
+a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: inherit;
+  }
+  
+ 
+  
+  .btn-group {
+    text-align:center;
+    
+  }
+  
+  .open-modal {
+    font-weight: bold;
+    background: gray;
+    padding: 0.75rem 1.75rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    text-shadow: 0 0 20px rgb(225, 231, 233), 0 0 20px rgba(10, 175, 230, 0);
+  }
+
+/* MODAL
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: var(--black);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s ease-in;
+  }
+  
+  .modal.is-visible {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .modal-dialog {
+    position: relative;
+    max-width: 900px;
+    max-height: 90vh;
+    border-radius: 10px;
+    
+    overflow: auto;
+    cursor: default;
+  }
+  
+  .modal-dialog > * {
+    padding: 1rem;
+  }
+  
+  .modal-header, .modal-footer {
+    background: var(--lightgray);
+    text-shadow: none;
+    color: #e31b23;
+    text-align: center;
+  }
+  
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+    text-shadow: none;
+    font-size: larger;
+    font-style:initial;
+    
+  }
+
+  #Importante{
+    color: whitesmoke;
+    text-shadow: none;
+  }
+  
+  .modal-header .close-modal {
+    font-size: 1.5rem;
+  }
+  
+  .modal p + p {
+    margin-top: 1rem;
+  }
+  
+  
+  /* ANIMATIONS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  [data-animation] .modal-dialog {
+    opacity: 0;
+    transition: all 0.5s var(--bounceEasing);
+  }
+  
+  [data-animation].is-visible .modal-dialog {
+    opacity: 1;
+    transition-delay: 0.2s;
+  }
+  
+  [data-animation="slideInOutDown"] .modal-dialog {
+    transform: translateY(100%);
+  }
+  
+  [data-animation="slideInOutTop"] .modal-dialog {
+    transform: translateY(-100%);
+  }
+  
+  [data-animation="slideInOutLeft"] .modal-dialog {
+    transform: translateX(-100%);
+  }
+  
+  [data-animation="slideInOutRight"] .modal-dialog {
+    transform: translateX(100%);
+  }
+  
+  [data-animation="zoomInOut"] .modal-dialog {
+    transform: scale(0.2);
+  }
+  
+  [data-animation="rotateInOutDown"] .modal-dialog {
+    transform-origin: top left;
+    transform: rotate(-1turn);
+  }
+  
+  [data-animation="mixInAnimations"].is-visible .modal-dialog {
+    animation: mixInAnimations 2s 0.2s linear forwards;
+  }
+  
+  [data-animation="slideInOutDown"].is-visible .modal-dialog,
+  [data-animation="slideInOutTop"].is-visible .modal-dialog,
+  [data-animation="slideInOutLeft"].is-visible .modal-dialog,
+  [data-animation="slideInOutRight"].is-visible .modal-dialog,
+  [data-animation="zoomInOut"].is-visible .modal-dialog,
+  [data-animation="rotateInOutDown"].is-visible .modal-dialog {
+    transform: none;
+  }
+  
+  @keyframes mixInAnimations {
+    0% {
+      transform: translateX(-100%);
+    }
+  
+    10% {
+      transform: translateX(0);
+    }
+  
+    20% {
+      transform: rotate(20deg);
+    }
+  
+    30% {
+      transform: rotate(-20deg);
+    }
+  
+    40% {
+      transform: rotate(15deg);
+    }
+  
+    50% {
+      transform: rotate(-15deg);
+    }
+  
+    60% {
+      transform: rotate(10deg);
+    }
+  
+    70% {
+      transform: rotate(-10deg);
+    }
+  
+    80% {
+      transform: rotate(5deg);
+    }
+  
+    90% {
+      transform: rotate(-5deg);
+    }
+  
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  
+  /* FOOTER
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .page-footer {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .page-footer span {
+    color: #e31b23;
+  }
+
+  
+  /* Fin Modal
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+.estrellas {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+body {
+    background-size: 100%;
+    background:#000 url(http://1.bp.blogspot.com/-q7NYia_DjQI/U4t7_J4gwwI/AAAAAAAAMKo/nru4YxfjK6I/s1600/estrellas.png) repeat top center;
+    
+  }
+
+.estrellas{
+  background:transparent url(http://3.bp.blogspot.com/-FwB8aSiMBmI/U4t9MkimRrI/AAAAAAAAMK0/FAlqX8ZFyu8/s1600/twinkling.png) repeat top center;
+  z-index:-2;
+
+  -moz-animation:move-twink-back 100s linear infinite;
+  -ms-animation:move-twink-back 100s linear infinite;
+  -o-animation:move-twink-back 100s linear infinite;
+  -webkit-animation:move-twink-back 100s linear infinite;
+  animation:move-twink-back 100s linear infinite;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.Reloj{
+    font-family: 'Share Tech Mono', monospace;
+    /* font-family: 'Star Jedi', arial; */
+    color: white;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
+}
+
+.Tiempo{
+    letter-spacing: 0.0em;
+    font-size: 80px;
+    padding: 5px 0;
+}
+
+.Fecha{
+    letter-spacing: 0.01em;
+    font-size: 24px;
+}
+
+/*Cronometro CSS*/
+main {
+    font-family: 'Roboto Mono', monospace;
+    position: relative;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    border: 1px solid rgb(39, 179, 235);
+    color: rgb(255, 255, 255);
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.circle::before {
+    content: '';
+    border-radius: 50%;
+    z-index: -1;
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    left: calc(50% - 80px);
+    top: calc(50% - 80px);
+    background-color: #494747;
+}
+
+.seconds-sphere {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(69, 195, 233);
+    position: absolute;
+    left: calc(50% - 10px);
+    top: calc(50% - 10px);
+    animation: rotacion 60s linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes rotacion {
+	from { 	transform: rotate(-90deg) translateX(60px); }
+	to   {  transform: rotate(270deg) translateX(60px); }
+}
+
+.buttons {
+    margin-top: 10px;
+    display: inline-flex;
+}
+
+.paused {
+    height: 10px;
+    border-width: 5px 0 5px 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-left: 15px;
+    border-color: transparent transparent transparent #fff;
+    transition: 100ms all ease;
+    will-change: border-width;
+    border-style: solid;
+}
+
+.running {
+    border-style: double;
+    border-width: 0 0 0 10px;
+}
+
+.stop {
+    background-color: #fff;
+    height: 10px;
+    width: 10px;
+    cursor: pointer;
+}
