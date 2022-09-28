@@ -88,7 +88,7 @@ const stop = () => {
     playPauseButton.classList.remove('running');
     runningTime = 0;
     clearInterval(stopwatchInterval);
-    stopwatch.textContent = '00:00';
+    stopwatch.textContent = '00:00:00';
 }
 
 const start = () => {
@@ -98,15 +98,17 @@ const start = () => {
     stopwatchInterval = setInterval( () => {
         runningTime = Date.now() - startTime;
         stopwatch.textContent = calculateTime(runningTime);
-    }, 1000)
+    }, 100)
 }
 
 const calculateTime = runningTime => {
+  const total_minseconds = Math.floor(runningTime / 100);
     const total_seconds = Math.floor(runningTime / 1000);
     const total_minutes = Math.floor(total_seconds / 60);
 
+    const display_minseconds = (total_minseconds % 60).toString().padStart(2, "0");
     const display_seconds = (total_seconds % 60).toString().padStart(2, "0");
     const display_minutes = total_minutes.toString().padStart(2, "0");
 
-    return `${display_minutes}:${display_seconds}`
+    return `${display_minutes}:${display_seconds}:${display_minseconds}`
 }
