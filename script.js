@@ -88,7 +88,7 @@ const stop = () => {
     playPauseButton.classList.remove('running');
     runningTime = 0;
     clearInterval(stopwatchInterval);
-    stopwatch.textContent = '00:00:00';
+    stopwatch.textContent = '00:00';
 }
 
 const start = () => {
